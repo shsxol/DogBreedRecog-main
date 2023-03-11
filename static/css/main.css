@@ -1,0 +1,232 @@
+/* Font Family Import */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* disable selecting of site content */
+  /* user-select: none;
+  -webkit-user-select: none; */
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-color: #6ccff6;
+  --white-color: #fffffc;
+  --black-color: #021418;
+  /*------- Font and typography -------*/
+  --biggest-font-size: 1.25rem;
+  --h1-font-size: 3rem;
+  --normal-font-size: 1.2rem;
+  --small-font-size: 0.713rem;
+  --tiny-font-size: 0.625rem;
+}
+
+@media screen and (min-width: 1900px) {
+  :root {
+    --h1-font-size: 3.2rem;
+    --h4-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 1rem;
+    --tiny-font-size: 0.688rem;
+  }
+}
+
+body {
+  background: var(--white-color);
+  background-color: white;
+}
+
+ .dark-mode {
+  background-color: #1e1e24;
+  color: white;
+}
+
+span {
+  color: var(--main-color);
+  font-weight: 800;
+}
+
+.logo:img {
+position:relative;
+top:100px;
+left: 100px;
+}
+
+h1 {
+  font-family: Bahnschrift SemiBold;
+  font-weight: 800;
+  margin: 4vh 2vw;
+  font-size: var(--h1-font-size);
+  color: #75d9c7;
+  text-align: center;
+}
+
+p {
+  font-weight: 400;
+  margin: 50px;
+  font-size: var(--normal-font-size);
+  line-height: 1; /* Set the line-height to 1.5 for easier readability */
+  font-family: Arial;
+   text-align: justify;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+a {
+  color: #75d9c7;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: Bahnschrift Light;
+}
+
+.my-text {
+  font-size: 24px;
+  color: #75d9c7;
+  text-shadow: none;
+  transition: text-shadow 0.25s ease;
+
+}
+
+.my-text:hover {
+  text-shadow: 0 0 3px #ffffff;
+}
+
+button {
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: var(--h4-font-size);
+  color: #75d9c7;
+  background: #36394f;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: Bahnschrift Light;
+}
+
+.my-button {
+  background-color: #36394f;
+  transition: box-shadow 0.25s ease;
+}
+
+.my-button:hover {
+  background-color: #505473;
+  box-shadow: 0 0 7px #75d9c7;
+}
+
+.my-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #353745;
+}
+
+.top-right-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dark-button:hover {
+  background-color: #b5b5b5;
+  color: #8a8a8a;
+  box-shadow: 0 0 7px #999999;
+}
+
+.dark-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #999999;
+}
+
+ul {
+  margin: 10px 0;
+  font-size: var(--normal-font-size);
+}
+
+li {
+  font-family: Bahnschrift Light;
+  list-style:none;
+}
+
+input {
+  border: 2px solid;
+  border-color: #36394f;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: var(--normal-font-size);
+  width: 100%;
+  margin-bottom: 10px;
+  align: center;
+}
+
+form {
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header with background image */
+header {
+  background-color: #36394f;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 325px; /* or set the height to the height of your image */
+}
+
+.wrapper {
+  margin: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info_container li,
+.info_container span {
+  font-size: var(--normal-font-size);
+}
+
+.upload_image {
+  background-color: var(--main-color);
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  padding: 1rem 0;
+}
+
+#message {
+  color: var(--main-color);
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+nav ul {
+  list-style: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block; /* Display list items horizontally */
+}
+
+nav a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+footer {
+background-color: #242635;
+background-position: bottom center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100px;
+}

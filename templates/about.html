@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Breed Recognition System</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+
+  </head>
+<header>
+  <div style="text-align:center;">
+   <img src="{% static 'images/banner_long.jpg' %}" alt="Header Image">
+       <div>
+      <h1>Dog Breed Recognition System</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/" class="my-text">Home</a></li>
+        <li><a href="/about/" class="my-text">About</a></li>
+        <li><a href="/members/" class="my-text">Members</a></li>
+      </ul>
+    </nav>
+      <button onclick="myFunction()" class="top-right-btn dark-button"><img src="{% static 'images/dark.png' %}" alt="Button Text" style="width:50px;height:50px;"></button>
+  </div>
+
+<script>
+  function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function setDarkMode(value) {
+  var body = document.body;
+  body.classList.toggle("dark-mode", value);
+  localStorage.setItem("dark-mode", value);
+}
+
+function myFunction() {
+  var body = document.body;
+  var darkMode = body.classList.contains("dark-mode");
+  setDarkMode(!darkMode);
+}
+
+// Check for saved dark mode preference
+var savedDarkMode = localStorage.getItem("dark-mode") === "true";
+setDarkMode(savedDarkMode);
+</script>
+
+</header>
+
+ <body>
+    <div>
+       <p>Dogs are one of the most popular pets in the world and have been domesticated for thousands of years.
+           They are known for their loyalty, companionship, and their ability to provide emotional support to their owners.
+           There are many different breeds of dogs, each with their own unique characteristics and traits.
+           From small lap dogs to large working breeds, dogs come in all shapes and sizes and can be bred for a variety of purposes,
+           including hunting, herding, and guarding. Some popular breeds include the Golden Retriever, Labrador Retriever,
+           Poodle, German Shepherd, and Bulldog, to name just a few. Understanding the different characteristics and needs
+           of each breed is important for choosing the right dog for your lifestyle and ensuring a happy and healthy relationship
+           between you and your furry friend.</p>
+        <p>We cannot always identify what breed a dog is. Every breed of dog has their own unique characteristics,
+            identity and quality. Some of the common dog breeds in Nepal are; Labrador Retriever, German Shepherd, Beagle,
+            Golden Retriever, Chihuahua, Collie, Cocker Spaniel, Rottweiler, Tibetan Mastiff, Lhasa Apso and more.
+            We cannot identify these breeds of dog just by looking at them. To help with this, we have developed a dog breed recognition system.
+            Using this system, we input an image of a dog and the system will predict what the breed of the dog is.
+            To develop our system, we have used a CNN model from scratch for the recognition of breed of dog.
+            The Convolutional Neural Network (CNN or ConvNet) is a subtype of Neural Networks that is mainly used for applications
+            in image recognition. Its built-in convolutional layer reduces the high dimensionality of an image without losing its information.
+            That is why CNNs are especially used for image recognition systems. Nowadays, there are images of higher pixel densities.
+            Such type of network will most likely run into overfitting. This means that the model will give good predictions for the
+            training set, but will not generalize well to new cases that it does not know yet. Additionally, due to large number of
+            parameters, the network would very likely stop attending to individual image details as they would be lost in sheer mass.
+            However, if we want to classify an image detail as they would be lost in sheer mass. However, if we want to classify an image,
+            e.g. whether if there is a dog in it or not, and the details such as the nose, the ears, the eyes, the fur etc can be the
+            decisive factor for the result accuracy.
+</p>
+    </div>
+  </body>
+<footer>
+  <div style="text-align:center;
+padding-top:40px;">
+<a>This project was developed by BCT076 group.</a>
+  </div>
+</footer>
+</html>

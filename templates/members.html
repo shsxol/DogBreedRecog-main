@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Breed Recognition System</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+
+  </head>
+<header>
+  <div style="text-align:center;">
+   <img src="{% static 'images/banner_long.jpg' %}" alt="Header Image">
+       <div>
+      <h1>Dog Breed Recognition System</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/" class="my-text">Home</a></li>
+        <li><a href="/about/" class="my-text">About</a></li>
+        <li><a href="/members/" class="my-text">Members</a></li>
+      </ul>
+    </nav>
+      <button onclick="myFunction()" class="top-right-btn dark-button"><img src="{% static 'images/dark.png' %}" alt="Button Text" style="width:50px;height:50px;"></button>
+  </div>
+
+<script>
+  function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function setDarkMode(value) {
+  var body = document.body;
+  body.classList.toggle("dark-mode", value);
+  localStorage.setItem("dark-mode", value);
+}
+
+function myFunction() {
+  var body = document.body;
+  var darkMode = body.classList.contains("dark-mode");
+  setDarkMode(!darkMode);
+}
+
+// Check for saved dark mode preference
+var savedDarkMode = localStorage.getItem("dark-mode") === "true";
+setDarkMode(savedDarkMode);
+</script>
+
+</header>
+ <body>
+    <div>
+        <p>The members of this group are:<br>
+        Drishya Phuel (HCE076BCT015)<br>
+        Shakti Rajbhandari (HCE076BCT038)<br>
+        Smile Shrestha (HCE076BCT040)<br>
+            Sushant Shakya (HCE076BCT044)</p>
+    </div>
+  </body>
+<footer>
+  <div style="text-align:center;
+padding-top:40px;">
+<a>This project was developed by BCT076 group.</a>
+  </div>
+</footer>
+</html>

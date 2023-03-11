@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Breed Recognition System</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+
+  </head>
+<header>
+  <div style="text-align:center;">
+   <img src="{% static 'images/banner_long.jpg' %}" alt="Header Image">
+  </div>
+
+  <div>
+
+      <h1>
+
+        Dog Breed Recognition System</h1>
+      </div>
+  <div align="center">
+    <nav>
+      <ul>
+        <li><a href="/" class="my-text">Home</a></li>
+        <li><a href="/about/" class="my-text">About</a></li>
+        <li><a href="/members/" class="my-text">Members</a></li>
+      </ul>
+    </nav>
+      <button onclick="myFunction()" class="top-right-btn dark-button"><img src="{% static 'images/dark.png' %}" alt="Button Text" style="width:50px;height:50px;"></button>
+  </div>
+
+<script>
+  function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function setDarkMode(value) {
+  var body = document.body;
+  body.classList.toggle("dark-mode", value);
+  localStorage.setItem("dark-mode", value);
+}
+
+function myFunction() {
+  var body = document.body;
+  var darkMode = body.classList.contains("dark-mode");
+  setDarkMode(!darkMode);
+}
+
+// Check for saved dark mode preference
+var savedDarkMode = localStorage.getItem("dark-mode") === "true";
+setDarkMode(savedDarkMode);
+</script>
+
+</header>
+  <body>
+
+    <form action="{% url 'prediction' %}"method="POST" enctype="multipart/form-data" style="text-align:center;">
+      {% csrf_token %}
+      <input style="text-align:center;"
+        class="custom-file-upload"
+        type="file"
+        accept="image"
+        name="image"
+        id="file"
+        required
+      />
+      <button class="my-button" type="submit" id="submitBtn" style="text-align:center;">
+        Predict Breed
+      </button>
+      <div class="status">
+        <p id="message">{{ message }}</p>
+      </div>
+    </form>
+
+    <div class="wrapper">
+      <img
+        src="{% if image_url %}{{ image_url }}{% else %}{% static 'images/paw.png' %}{% endif %}"
+        alt="Compressed Image"
+        width="250px"
+      />
+
+      <div class="info_container" style="padding-left:100px">
+        <ul>
+          <li>Name: <span class="name">{{ image_name }}</span></li>
+          <li>Breed: <span class="type">{{ result }}</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+<footer>
+  <div style="text-align:center;
+padding-top:40px;">
+<a>This project was developed by BCT076 group.</a>
+  </div>
+</footer>
+</html>
